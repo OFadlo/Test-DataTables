@@ -1,5 +1,8 @@
 <?php
 
+//use App\Http\Controllers;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,5 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user', 'UserController@index');
-Route::get('data', 'UserController@data');
+
+
+
+Route::get('datatables.data', 'UserController@anyData')->name('datatables.data');
+Route::get('datatables', 'UserController@getIndex')->name('datatables');
+
+
+
+/*
+Route::controller('datatables', 'UserController', [
+    'anyData'  => 'datatables.data',
+    'getIndex' => 'datatables',
+]);*/

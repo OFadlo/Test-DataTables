@@ -10,11 +10,11 @@ class UserController extends Controller
 {
     //
 
-      public function index()
+      public function getIndex()
     {
         return view('datatables');
     }
-     public function data()
+     public function anyData()
     {
         return Datatables::of(User::query())->make(true);
     }
